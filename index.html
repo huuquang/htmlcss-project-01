@@ -43,25 +43,41 @@
 
 		<!-- Style css -->
 		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/reponsive.css" />
 		<title>Project 01</title>
 	</head>
 	<body>
-		<!-- Header -->
+		<!-- PC Header -->
 		<header class="fixed-header">
 			<div class="content">
 				<nav class="navbar">
+					<!-- Tablet/mobile menu -->
+					<label for="menu-checkbox" class="toggle-menu">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path
+								fill="currentColor"
+								d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+							/>
+						</svg>
+					</label>
 					<!-- Logo -->
 					<a href="#">
-						<img src="./assets/img/logo.svg" alt="Bensnik." />
+						<img class="logo" src="./assets/img/logo.svg" alt="Bensnik." />
 					</a>
 
 					<!-- Navigation -->
-					<ul>
+					<ul id="pc-nav">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#sevices">Services</a></li>
 						<li><a href="#features">Features</a></li>
 						<li><a href="#resources">Resources</a></li>
 						<li><a href="#contact">Contact</a></li>
+						<li class="show-on-mobile sapatate">
+							<a href="#!">Sign in</a>
+						</li>
+						<li class="show-on-mobile">
+							<a href="#!">Sign up</a>
+						</li>
 					</ul>
 					<!-- Action -->
 					<div class="action">
@@ -71,11 +87,42 @@
 				</nav>
 			</div>
 		</header>
+		<!-- Tablet/mobile header -->
+		<header class="mobile-header">
+			<input type="checkbox" name="" id="menu-checkbox" class="menu-checkbox" hidden />
 
+			<!-- Overlay -->
+			<label for="menu-checkbox" class="menu-overlay"></label>
+
+			<!-- Menu content -->
+			<div class="menu-drawer">
+				<div class="header-top-mobile">
+					<a href="#">
+						<img src="./assets/img/logo.svg" alt="Bensnik." />
+					</a>
+					<label for="menu-checkbox" class="close-menu">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+							<path
+								fill="currentColor"
+								d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+							/>
+						</svg>
+					</label>
+				</div>
+				<!-- Navigation -->
+				<ul id="mobile-nav"></ul>
+				<script>
+					const pcNav = document.querySelector("#pc-nav");
+					const mobileNav = document.querySelector("#mobile-nav");
+
+					mobileNav.innerHTML = pcNav.innerHTML;
+				</script>
+			</div>
+		</header>
 		<!-- Main -->
 		<main>
 			<!-- Hero -->
-			<div class="hero-wrap">
+			<div id="home" class="hero-wrap">
 				<div class="content">
 					<div class="hero">
 						<div class="info">
@@ -114,7 +161,7 @@
 					</div>
 					<div class="row row-desc">
 						<p class="desc">More than 45,000+ companies trust besnik</p>
-						<p class="desc">5 Star Ratings (2k+ Review)</p>
+						<p class="desc hide-on-mobile">5 Star Ratings (2k+ Review)</p>
 					</div>
 					<div class="brand">
 						<a href="#!">
@@ -199,7 +246,9 @@
 								><img src="./assets/img/feature-1.jpg" alt="Nikko Apartments" class="thumb"
 							/></a>
 							<div class="body">
-								<h3 class="title"><a href="#!">Nikko Apartments</a></h3>
+								<h3 class="title">
+									<a href="#!">Nikko Apartments</a>
+								</h3>
 								<p class="desc">8502 Preston Rd. Inglewood, Maine 98280</p>
 								<div class="info">
 									<img src="./assets/img/beds.svg" alt="#!" class="icon" />
@@ -223,7 +272,7 @@
 								<h3 class="title">
 									<a href="#!" class="line-clamp">CouCou Homestead</a>
 								</h3>
-								<p class="desc line-clamp" style="--line-clamp: 1">
+								<p class="desc line-clamp" style="--line-clamp: 2">
 									8502 Preston Rd. Inglewood, Maine 98280
 								</p>
 								<div class="info">
@@ -244,7 +293,9 @@
 								<img src="./assets/img/feature-3.jpg" alt="Lavis 18 Residence" class="thumb"
 							/></a>
 							<div class="body">
-								<h3 class="title"><a href="#!">Lavis 18 Residence</a></h3>
+								<h3 class="title">
+									<a href="#!">Lavis 18 Residence</a>
+								</h3>
 								<p class="desc">8502 Preston Rd. Inglewood, Maine 98280</p>
 								<div class="info">
 									<img src="./assets/img/beds.svg" alt="#!" class="icon" />
@@ -258,6 +309,9 @@
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="view-all">
+						<a href="#!" class="btn show-on-mobile">View All Properties</a>
 					</div>
 				</div>
 			</div>
@@ -330,15 +384,15 @@
 					<div class="row row-qty">
 						<div class="qty-item">
 							<strong class="qty">2,500</strong>
-							<div class="desc">Homes For Sale</div>
+							<div class="qty-desc">Homes For Sale</div>
 						</div>
 						<div class="qty-item">
 							<strong class="qty">5,000+</strong>
-							<div class="desc">Homes Recently Sold</div>
+							<div class="qty-desc">Homes Recently Sold</div>
 						</div>
 						<div class="qty-item">
 							<strong class="qty">170+</strong>
-							<div class="desc">Price Reduced</div>
+							<div class="qty-desc">Price Reduced</div>
 						</div>
 					</div>
 				</div>
@@ -369,30 +423,54 @@
 					<div class="column">
 						<h3 class="heading">Product</h3>
 						<ul class="list">
-							<li class="item"><a href="#!">Listing</a></li>
-							<li class="item"><a href="#!">Property</a></li>
-							<li class="item"><a href="#!">Agents</a></li>
-							<li class="item"><a href="#!">Blog</a></li>
+							<li class="item">
+								<a href="#!">Listing</a>
+							</li>
+							<li class="item">
+								<a href="#!">Property</a>
+							</li>
+							<li class="item">
+								<a href="#!">Agents</a>
+							</li>
+							<li class="item">
+								<a href="#!">Blog</a>
+							</li>
 						</ul>
 					</div>
 					<!-- Resources column -->
 					<div class="column">
 						<h3 class="heading">Resources</h3>
 						<ul class="list">
-							<li class="item"><a href="#!">Our Homes</a></li>
-							<li class="item"><a href="#!">Member Stories</a></li>
-							<li class="item"><a href="#!">Video</a></li>
-							<li class="item"><a href="#!">Free trial</a></li>
+							<li class="item">
+								<a href="#!">Our Homes</a>
+							</li>
+							<li class="item">
+								<a href="#!">Member Stories</a>
+							</li>
+							<li class="item">
+								<a href="#!">Video</a>
+							</li>
+							<li class="item">
+								<a href="#!">Free trial</a>
+							</li>
 						</ul>
 					</div>
 					<!-- Company -->
 					<div class="column">
 						<h3 class="heading">Company</h3>
 						<ul class="list">
-							<li class="item"><a href="#!">Patnerships</a></li>
-							<li class="item"><a href="#!">Terms of use</a></li>
-							<li class="item"><a href="#!">Privacy</a></li>
-							<li class="item"><a href="#!">Sitemap</a></li>
+							<li class="item">
+								<a href="#!">Patnerships</a>
+							</li>
+							<li class="item">
+								<a href="#!">Terms of use</a>
+							</li>
+							<li class="item">
+								<a href="#!">Privacy</a>
+							</li>
+							<li class="item">
+								<a href="#!">Sitemap</a>
+							</li>
 						</ul>
 					</div>
 					<!-- Get in touch -->

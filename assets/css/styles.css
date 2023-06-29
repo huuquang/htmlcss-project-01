@@ -325,7 +325,8 @@ a {
 }
 
 .featured .list {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
 	margin-top: 70px;
 }
@@ -393,7 +394,9 @@ a {
 .stats .row {
 	display: flex;
 }
-
+.stats-trend .icon {
+	margin-left: auto;
+}
 .stats .img-block,
 .stats .info {
 	width: 50%;
@@ -453,7 +456,6 @@ a {
 	padding: 45px 22px 40px;
 	border-radius: 0px 0px 12px 12px;
 	background: #fff;
-	box-shadow: 4px 4px 18px -4px;
 }
 
 .stats-trend .value {
@@ -519,14 +521,12 @@ a {
 	font-size: 6.4rem;
 	color: #000000;
 }
-
-.stats .desc {
+.stats .qty-desc {
 	margin-top: 24px;
 	font-weight: 500;
 	font-size: 1.8rem;
 	color: #7b8087;
 }
-
 /* #endregion */
 
 /* #region Subscription */
